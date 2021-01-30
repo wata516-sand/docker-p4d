@@ -17,9 +17,10 @@ VOLUME /opt/perforce/servers
 VOLUME /opt/perforce/triggers
 VOLUME /etc/perforce
 
+ENV SERVER_NAME p4
 ENV P4PORT 1666
 ENV P4USER p4admin
-ENV P4PASSWD p4admin@123
+ENV P4PASSWD p4admin@12345
 
 ADD ./run.sh /
 CMD ["/run.sh"]
