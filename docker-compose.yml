@@ -15,6 +15,13 @@ services:
     working_dir: $PWD
     ports: 
       - "1666:1666"
+    networks:
+      - perforce-network
+
+networks:
+  perforce-network:
+    external: true
+
 #    volumes:
 
 #      - $PWD/p4d_volume/servers:/opt/perforce/servers
