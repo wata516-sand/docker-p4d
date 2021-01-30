@@ -12,11 +12,11 @@ services:
       P4PORT: 1666
       P4USER: p4admin
       P4PASSWD: p4admin@12345
-      P4LOG: /p4d/logs
-      P4JOURNAL: /p4d/journals
-    container_name: "p4d"
     working_dir: $PWD
     ports: 
       - "1666:1666"
-    volumes:
-      - $PWD/p4d_volume:/p4d
+#    volumes:
+
+#      - $PWD/p4d_volume/servers:/opt/perforce/servers
+#      - $PWD/p4d_volume/triggers:/opt/perforce/triggers
+#      - $PWD/p4d_volume/etc:/etc/perforce

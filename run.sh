@@ -14,12 +14,13 @@ set -e
 
 if [ ! -f /etc/perforce/p4dctl.conf.d/$P4NAME.conf ]; then
 
-/opt/perforce/sbin/configure-perforce-server.sh -h
+#    /opt/perforce/sbin/configure-perforce-server.sh -h
+    
     # Configure a server if not yet.
-    /opt/perforce/sbin/configure-perforce-server.sh $P4NAME -n \
+    /opt/perforce/sbin/configure-perforce-server.sh -n \
                                                     -p $P4PORT \
                                                     -u $P4USER \
-                                                    -P $P4PASSWD
+                                                    -P $P4PASSWD $P4NAME
 else
     # Start the server if yet.
     p4dctl start $P4NAME

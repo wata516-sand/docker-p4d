@@ -17,17 +17,10 @@ ENV P4NAME p4
 ENV P4PORT 1666
 ENV P4USER p4admin
 ENV P4PASSWD p4admin@12345
-ENV P4LOG /p4d/logs
-ENV P4JOURNAL /p4d/journals
 
-RUN mkdir -p $P4LOG/log && \
-    mkdir -p $P4JOURNAL
-
-WORKDIR /p4d/
-VOLUME /p4d
-#VOLUME /opt/perforce/servers
-#VOLUME /opt/perforce/triggers
-#VOLUME /etc/perforce
+VOLUME /opt/perforce/servers
+VOLUME /opt/perforce/triggers
+VOLUME /etc/perforce
 
 ADD ./run.sh /
 CMD ["/run.sh"]
