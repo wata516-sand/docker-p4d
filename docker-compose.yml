@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app:
+    image: wata516/p4d
+    restart: always
+    environment:
+      SERVER_NAME: p4
+      P4PORT: 1666
+      P4USER: p4admin
+      P4PASSWD: p4admin@12345
+    container_name: "p4d"
+    working_dir: $PWD
+    ports: 
+      - "1666:1666"
+    volumes:
+      - $PWD/p4d_volume
