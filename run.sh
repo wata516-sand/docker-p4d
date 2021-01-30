@@ -26,4 +26,4 @@ else
     p4dctl start $P4NAME
 fi
 
-exec ls -1v --color=never $P4LOG/log | xargs tail -f
+exec ls -1v --color=never /opt/perforce/servers/$P4NAME/logs/log | xargs tail -f
